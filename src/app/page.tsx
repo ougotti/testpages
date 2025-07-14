@@ -41,6 +41,14 @@ export default function TodoApp() {
     setDoneItems(doneItems.filter(item => item.id !== id));
   };
 
+  const incompleteTodo = (id: number) => {
+    const doneItemToIncomplete = doneItems.find(item => item.id === id);
+    if (doneItemToIncomplete) {
+      setDoneItems(doneItems.filter(item => item.id !== id));
+      setTodos([...todos, { ...doneItemToIncomplete, completed: false }]);
+    }
+  };
+
   const handleKeyPress = (e: React.KeyboardEvent) => {
     if (e.key === 'Enter') {
       addTodo();
@@ -130,6 +138,12 @@ export default function TodoApp() {
                     <span className="text-white text-sm">✓</span>
                   </div>
                   <span className="flex-1 text-foreground line-through opacity-75">{item.text}</span>
+                  <button
+                    onClick={() => incompleteTodo(item.id)}
+                    className="flex-shrink-0 px-3 py-1 bg-blue-500 text-white rounded hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors text-sm"
+                  >
+                    未完了に戻す
+                  </button>
                   <button
                     onClick={() => deleteDoneItem(item.id)}
                     className="flex-shrink-0 px-3 py-1 bg-red-500 text-white rounded hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500 transition-colors text-sm"
