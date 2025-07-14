@@ -2,6 +2,10 @@
 
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app) and configured for deployment to GitHub Pages.
 
+## Live Site
+
+🚀 **[View Live Site](https://ougotti.github.io/testpages/)**
+
 ## GitHub Pages Deployment
 
 This application is automatically deployed to GitHub Pages using GitHub Actions. The deployment workflow runs when changes are pushed to the `main` branch.
@@ -47,7 +51,7 @@ The application is automatically deployed to GitHub Pages when changes are pushe
 2. Exports it as static files
 3. Deploys to GitHub Pages
 
-The live site will be available at: `https://ougotti.github.io/testpages/`
+The live site will be available at: [https://ougotti.github.io/testpages/](https://ougotti.github.io/testpages/)
 
 ## Learn More
 
