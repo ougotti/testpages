@@ -12,6 +12,7 @@ export default function TodoApp() {
   const [todos, setTodos] = useState<TodoItem[]>([]);
   const [doneItems, setDoneItems] = useState<TodoItem[]>([]);
   const [inputValue, setInputValue] = useState('');
+  const [searchQuery, setSearchQuery] = useState('');
 
   const addTodo = () => {
     if (inputValue.trim() !== '') {
@@ -47,12 +48,32 @@ export default function TodoApp() {
     }
   };
 
+  // Filter todos and done items based on search query
+  const filteredTodos = todos.filter(todo =>
+    todo.text.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+  
+  const filteredDoneItems = doneItems.filter(item =>
+    item.text.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
   return (
     <div className="min-h-screen bg-background p-4 sm:p-8">
       <div className="max-w-2xl mx-auto">
         <h1 className="text-3xl font-bold text-center mb-8 text-foreground">
           TODO リスト
         </h1>
+        
+        {/* Search Filter */}
+        <div className="mb-6">
+          <input
+            type="text"
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            placeholder="タイトルで検索..."
+            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+          />
+        </div>
         
         {/* Add Todo Form */}
         <div className="mb-8">
@@ -77,15 +98,15 @@ export default function TodoApp() {
         {/* TODO List */}
         <div className="mb-8">
           <h2 className="text-xl font-semibold mb-4 text-foreground">
-            TODO ({todos.length})
+            TODO ({filteredTodos.length})
           </h2>
-          {todos.length === 0 ? (
+          {filteredTodos.length === 0 ? (
             <p className="text-gray-500 text-center py-8">
-              リストは空です
+              {searchQuery ? '検索結果がありません' : 'リストは空です'}
             </p>
           ) : (
             <div className="space-y-2">
-              {todos.map((todo) => (
+              {filteredTodos.map((todo) => (
                 <div
                   key={todo.id}
                   className="flex items-center gap-3 p-3 bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700"
@@ -113,15 +134,15 @@ export default function TodoApp() {
         {/* DONE List */}
         <div>
           <h2 className="text-xl font-semibold mb-4 text-foreground">
-            DONE ({doneItems.length})
+            DONE ({filteredDoneItems.length})
           </h2>
-          {doneItems.length === 0 ? (
+          {filteredDoneItems.length === 0 ? (
             <p className="text-gray-500 text-center py-8">
-              完了したタスクはありません
+              {searchQuery ? '検索結果がありません' : '完了したタスクはありません'}
             </p>
           ) : (
             <div className="space-y-2">
-              {doneItems.map((item) => (
+              {filteredDoneItems.map((item) => (
                 <div
                   key={item.id}
                   className="flex items-center gap-3 p-3 bg-green-50 dark:bg-green-900/20 rounded-lg shadow-sm border border-green-200 dark:border-green-700"
