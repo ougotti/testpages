@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Test Pages - Next.js App",
-  description: "A Next.js application deployed to GitHub Pages",
+  title: "TODO リスト - Test Pages",
+  description: "シンプルなTODOリストアプリケーション",
 };
 
 export default function RootLayout({
