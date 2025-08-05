@@ -1,0 +1,38 @@
+name: Copilot Setup Steps
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - .github/workflows/copilot-setup-steps.yml
+  pull_request:
+    paths:
+      - .github/workflows/copilot-setup-steps.yml
+env:
+  LANG: 'ja_JP.UTF-8'
+  LANGUAGE: 'ja_JP:ja'
+  LC_ALL: 'ja_JP.UTF-8'
+  TZ: 'Asia/Tokyo'
+
+jobs:
+  copilot-setup-steps:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22.15.0'
+      
+      - name: Enable corepack for yarn
+        run: corepack enable
+      
+      - name: Verify installations
+        run: |
+          echo "Node.js version:"
+          node --version
+          echo "npm version:"
+          npm --version
+          echo "yarn version:"
+          yarn --version
