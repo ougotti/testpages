@@ -13,14 +13,7 @@ export default function MenuPage() {
         {[
           'ToDoリスト',
           'テトリス',
-          'アプリ3',
-          'アプリ4',
-          'アプリ5',
-          'アプリ6',
-          'アプリ7',
-          'アプリ8',
-          'アプリ9',
-          'アプリ10',
+          ...Array.from({ length: 8 }, (_, i) => `アプリ${i + 3}`)
         ].map((name, i) => (
           <li key={i} className="p-4 bg-white dark:bg-gray-800 rounded shadow">
             <Link href={`/app${i + 1}`} className="block text-center">
