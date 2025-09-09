@@ -9,6 +9,7 @@ These instructions apply to the entire repository.
 
 ## Development Notes
 - The home page (`src/app/page.tsx`) presents links to ten apps.
+- App2 (`src/app/app2`) contains a Tetris game with canvas rendering and keyboard controls.
 - Each app page (`src/app/appN/page.tsx`) must:
   - Export `metadata` with a Japanese title.
   - Wrap content in a `<main>` element.
