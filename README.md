@@ -1,64 +1,64 @@
 # testpages
 
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app) and configured for deployment to GitHub Pages.
+これは[Next.js](https://nextjs.org)プロジェクトで、[`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app)でブートストラップされ、GitHub Pagesへのデプロイメント用に設定されています。
 
-## Live Site
+## ライブサイト
 
-🚀 **[View Live Site](https://ougotti.github.io/testpages/)**
+🚀 **[ライブサイトを表示](https://ougotti.github.io/testpages/)**
 
-## GitHub Pages Deployment
+## GitHub Pagesデプロイメント
 
-This application is automatically deployed to GitHub Pages using GitHub Actions. The deployment workflow runs when changes are pushed to the `main` branch.
+このアプリケーションはGitHub Actionsを使用してGitHub Pagesに自動デプロイされます。デプロイメントワークフローは`main`ブランチに変更がプッシュされたときに実行されます。
 
-### Configuration
+### 設定
 
-The application is configured for static export with the following settings:
-- Static export enabled (`output: 'export'`)
-- Base path set for GitHub Pages (`/testpages`)
-- Image optimization disabled for static hosting
-- Trailing slashes enabled for better compatibility
+このアプリケーションは以下の設定でstatic exportが構成されています：
+- Static export有効化（`output: 'export'`）
+- GitHub Pages用のベースパス設定（`/testpages`）
+- 静的ホスティング用の画像最適化無効化
+- 互換性向上のためのtrailing slash有効化
 
-## Getting Started
+## はじめに
 
-First, run the development server:
+まず、開発サーバーを実行してください：
 
 ```bash
 npm run dev
-# or
+# または
 yarn dev
-# or
+# または
 pnpm dev
-# or
+# または
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+ブラウザで[http://localhost:3000](http://localhost:3000)を開いて結果を確認してください。
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+`app/page.tsx`を変更することでページの編集を開始できます。ファイルを編集すると、ページが自動更新されます。
 
-## Available Scripts
+## 利用可能なスクリプト
 
-- `npm run dev` - Start the development server
-- `npm run build` - Build the application for production
-- `npm run export` - Build and export the application as static files
-- `npm run lint` - Run ESLint to check code quality
+- `npm run dev` - 開発サーバーを起動
+- `npm run build` - 本番用アプリケーションをビルド
+- `npm run export` - アプリケーションをビルドし、静的ファイルとしてエクスポート
+- `npm run lint` - ESLintを実行してコード品質をチェック
 
-## Deployment
+## デプロイメント
 
-The application is automatically deployed to GitHub Pages when changes are pushed to the main branch. The deployment process:
+このアプリケーションはmainブランチに変更がプッシュされたときに、GitHub Pagesに自動デプロイされます。デプロイメントプロセス：
 
-1. Builds the Next.js application
-2. Exports it as static files
-3. Deploys to GitHub Pages
+1. Next.jsアプリケーションをビルド
+2. 静的ファイルとしてエクスポート
+3. GitHub Pagesにデプロイ
 
-The live site will be available at: [https://ougotti.github.io/testpages/](https://ougotti.github.io/testpages/)
+ライブサイトは以下のURLで利用可能です：[https://ougotti.github.io/testpages/](https://ougotti.github.io/testpages/)
 
-## Learn More
+## さらに詳しく
 
-To learn more about Next.js, take a look at the following resources:
+Next.jsについてさらに詳しく学ぶには、以下のリソースをご覧ください：
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-- [Next.js Static Export](https://nextjs.org/docs/app/building-your-application/deploying/static-exports) - information about static exports
+- [Next.js Documentation](https://nextjs.org/docs) - Next.jsの機能とAPIについて学習
+- [Learn Next.js](https://nextjs.org/learn) - インタラクティブなNext.jsチュートリアル
+- [Next.js Static Export](https://nextjs.org/docs/app/building-your-application/deploying/static-exports) - static exportに関する情報
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+[Next.js GitHubリポジトリ](https://github.com/vercel/next.js)もチェックしてみてください。フィードバックやコントリビューションを歓迎します！
