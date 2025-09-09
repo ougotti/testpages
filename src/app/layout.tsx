@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "TODO リスト - Test Pages",
-  description: "シンプルなTODOリストアプリケーション",
+  title: "Test Pages",
+  description: "アプリケーションメニュー",
 };
 
 export default function RootLayout({
