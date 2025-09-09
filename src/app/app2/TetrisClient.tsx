@@ -82,7 +82,7 @@ function createPiece(): Piece {
     matrix: matrix.map((row) => [...row]),
     color,
     pos: {
-      x: (COLS / 2) | 0 - (matrix[0].length / 2) | 0,
+      x: Math.floor(COLS / 2 - matrix[0].length / 2),
       y: 0,
     },
   };
