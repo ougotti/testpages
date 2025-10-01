@@ -14,7 +14,8 @@ export default function MenuPage() {
           'ToDoリスト',
           'テトリス',
           'マンデルブロ',
-          ...Array.from({ length: 7 }, (_, i) => `アプリ${i + 4}`)
+          '家計CSVビューワ',
+          ...Array.from({ length: 6 }, (_, i) => `アプリ${i + 5}`)
         ].map((name, i) => (
           <li key={i} className="p-4 bg-white dark:bg-gray-800 rounded shadow">
             <Link href={`/app${i + 1}`} className="block text-center">
