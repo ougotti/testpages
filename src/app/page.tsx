@@ -10,7 +10,7 @@ export default function MenuPage() {
     'ToDoリスト',
     'テトリス',
     'マンデルブロ',
-    'アプリ4',
+    '家計CSVビューワ',
     '配当カレンダー',
     'アプリ6',
     'アプリ7',
