@@ -1,18 +1,14 @@
-import Link from 'next/link';
 import type { Metadata } from 'next';
+import ShooterClient from './ShooterClient';
 
 export const metadata: Metadata = {
-  title: 'アプリ6',
+  title: 'シューティングゲーム',
 };
 
-export default function App6() {
+export default function App6Page() {
   return (
-    <main className="min-h-screen p-8 bg-background text-foreground">
-      <h1 className="text-2xl font-bold mb-4">アプリ6</h1>
-      <p>このアプリは準備中です。</p>
-      <Link href="/" className="text-blue-500 underline block mt-4">
-        ホームに戻る
-      </Link>
+    <main>
+      <ShooterClient />
     </main>
   );
 }
