@@ -1,49 +1,49 @@
-# AGENTS
+# エージェント向け開発ガイド
 
-## Scope
-These instructions apply to the entire repository.
+## 適用範囲
+この指示はリポジトリ全体に適用されます。
 
-## Testing
-- Run `npm test` (currently no tests, but execute the command).
-- Run `npm run lint` before committing.
+## テスト
+- コミット前に `npm run lint` を実行してください。
+- `npm test` を実行してください（現在テストはありませんが、コマンドを実行する習慣を保ってください）。
 
-## Development Notes
-- The home page (`src/app/page.tsx`) presents links to ten apps.
-- App2 (`src/app/app2`) contains a Tetris game with canvas rendering and keyboard controls.
-- Each app page (`src/app/appN/page.tsx`) must:
-  - Export `metadata` with a Japanese title.
-  - Wrap content in a `<main>` element.
-  - Provide a link back to the home menu (`/`).
-  - Use Japanese text for UI labels.
+## 開発メモ
+- ホームページ（`src/app/page.tsx`）は10個のアプリへのリンクを表示します。
+- App2（`src/app/app2`）はキャンバスレンダリングとキーボード制御によるテトリスゲームを含んでいます。
+- 各アプリページ（`src/app/appN/page.tsx`）は以下を満たす必要があります：
+  - 日本語タイトルの `metadata` をエクスポートする
+  - コンテンツを `<main>` 要素でラップする
+  - ホームメニュー（`/`）への戻りリンクを提供する
+  - UIラベルに日本語テキストを使用する
 
-## Architecture Specifications
+## アーキテクチャ仕様
 
-### Client/Server Component Separation
-When an app requires both server-side metadata and client-side interactivity:
+### クライアント/サーバーコンポーネントの分離
+アプリがサーバーサイドのメタデータとクライアントサイドのインタラクティブ機能の両方を必要とする場合：
 
-1. **Server Component Pattern** (`page.tsx`):
-   - Acts as the main page component
-   - Exports `metadata` object with Japanese title
-   - Wraps content in `<main>` element
-   - Imports and renders the client component
-   - Does NOT use `'use client'` directive
+1. **サーバーコンポーネントパターン**（`page.tsx`）：
+   - メインページコンポーネントとして機能します
+   - 日本語タイトルの `metadata` オブジェクトをエクスポートします
+   - コンテンツを `<main>` 要素でラップします
+   - クライアントコンポーネントをインポートしてレンダリングします
+   - `'use client'` ディレクティブを使用しません
 
-2. **Client Component Pattern** (`[ComponentName]Client.tsx`):
-   - Contains all interactive logic (useState, event handlers, etc.)
-   - Uses `'use client'` directive at the top
-   - Does NOT export metadata (not allowed in client components)
-   - Handles all React hooks and browser-specific functionality
+2. **クライアントコンポーネントパターン**（`[ComponentName]Client.tsx`）：
+   - すべてのインタラクティブなロジック（useState、イベントハンドラなど）を含みます
+   - ファイルの先頭で `'use client'` ディレクティブを使用します
+   - メタデータをエクスポートしません（クライアントコンポーネントでは許可されていません）
+   - すべてのReactフックとブラウザ固有の機能を処理します
 
-### File Structure Example
+### ファイル構造の例
 ```
 src/app/appN/
-├── page.tsx           # Server component (metadata + main wrapper)
-└── ComponentClient.tsx # Client component (interactivity)
+├── page.tsx           # サーバーコンポーネント（メタデータ + メインラッパー）
+└── ComponentClient.tsx # クライアントコンポーネント（インタラクティブ機能）
 ```
 
-### Implementation Template
+### 実装テンプレート
 ```tsx
-// page.tsx (Server Component)
+// page.tsx（サーバーコンポーネント）
 import type { Metadata } from 'next';
 import ComponentClient from './ComponentClient';
 
@@ -61,20 +61,20 @@ export default function AppPage() {
 ```
 
 ```tsx
-// ComponentClient.tsx (Client Component)
+// ComponentClient.tsx（クライアントコンポーネント）
 'use client';
 
 import Link from 'next/link';
 import { useState } from 'react';
 
 export default function ComponentClient() {
-  // All interactive logic here
+  // すべてのインタラクティブなロジックをここに記述
   return (
     <div>
       <Link href="/" className="text-blue-500 underline block mb-4">
         ホームに戻る
       </Link>
-      {/* Component UI */}
+      {/* コンポーネントUI */}
     </div>
   );
 }
