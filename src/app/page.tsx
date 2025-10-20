@@ -14,7 +14,7 @@ export default function MenuPage() {
     '配当カレンダー',
     'シューティングゲーム',
     '3Dギア',
-    'アプリ8',
+    'Radikoプログラム検索',
     'アプリ9',
     'アプリ10',
   ];
