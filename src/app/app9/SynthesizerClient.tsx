@@ -73,12 +73,13 @@ export default function SynthesizerClient() {
     const canvasContext = canvas.getContext('2d');
     if (!canvasContext) return;
 
-    const bufferLength = analyserRef.current.frequencyBinCount;
+    const analyser = analyserRef.current;
+    const bufferLength = analyser.frequencyBinCount;
     const dataArray = new Uint8Array(bufferLength);
 
     const draw = () => {
       animationRef.current = requestAnimationFrame(draw);
-      analyserRef.current!.getByteTimeDomainData(dataArray);
+      analyser.getByteTimeDomainData(dataArray);
 
       canvasContext.fillStyle = 'rgb(20, 20, 30)';
       canvasContext.fillRect(0, 0, canvas.width, canvas.height);
