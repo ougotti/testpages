@@ -16,7 +16,7 @@ export default function MenuPage() {
     '3Dギア',
     'Radikoプログラム検索',
     'アプリ9',
-    'アプリ10',
+    'ポモドーロタイマー',
   ];
   
   return (
