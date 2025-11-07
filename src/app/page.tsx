@@ -15,7 +15,7 @@ export default function MenuPage() {
     'シューティングゲーム',
     '3Dギア',
     'Radikoプログラム検索',
-    'アプリ9',
+    '音楽シンセサイザー',
     'アプリ10',
   ];
   
