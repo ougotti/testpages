@@ -1,18 +1,15 @@
-import Link from 'next/link';
 import type { Metadata } from 'next';
+import App10Client from './App10Client';
 
 export const metadata: Metadata = {
-  title: 'アプリ10',
+  title: 'ポモドーロタイマー',
 };
 
 export default function App10() {
   return (
     <main className="min-h-screen p-8 bg-background text-foreground">
-      <h1 className="text-2xl font-bold mb-4">アプリ10</h1>
-      <p>このアプリは準備中です。</p>
-      <Link href="/" className="text-blue-500 underline block mt-4">
-        ホームに戻る
-      </Link>
+      <h1 className="text-2xl font-bold mb-6">ポモドーロタイマー</h1>
+      <App10Client />
     </main>
   );
 }
